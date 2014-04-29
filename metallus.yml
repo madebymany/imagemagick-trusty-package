@@ -8,7 +8,7 @@ jobs:
     packages:
       - type: debian
         name: imagemagick
-        version: "8:6.8.9-1"
+        version: "8:6.8.9-2"
         depends: 
           - libc6
           - libbz2-1.0
@@ -26,6 +26,9 @@ jobs:
           - libxext6
           - libxml2
           - zlib1g
+          - libpango1.0-0
+          - libopenexr6
+          - libdjvulibre21
         target: install
         repos:
           - mxm
