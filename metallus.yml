@@ -7,7 +7,7 @@ jobs:
   imagemagick:
     builder: make
     base: "ubuntu:14.04"
-    build-deps:
+    build_depends:
       - make
       - curl
       - bzip2
