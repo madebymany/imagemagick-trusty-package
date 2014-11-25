@@ -1,14 +1,40 @@
-software_groups: &software
-  - "base"
+packages:
+  branch_codenames:
+    master: unstable
+    production: stable
+
 jobs:
   imagemagick:
     builder: make
-    base: "ubuntu:12.04"
-    software_groups: *software
+    base: "ubuntu:14.04"
+    build_depends:
+      - make
+      - curl
+      - bzip2
+      - build-essential
+      - libc6
+      - libbz2-1.0
+      - libfontconfig1
+      - libfreetype6
+      - libgomp1
+      - libjasper1
+      - libjpeg8
+      - liblcms1
+      - liblqr-1-0
+      - libltdl7
+      - libpng12-0
+      - libtiff5
+      - libx11-6
+      - libxext6
+      - libxml2
+      - zlib1g
+      - libpango1.0-0
+      - libopenexr6
+      - libdjvulibre21
     packages:
       - type: debian
         name: imagemagick
-        version: "8:6.8.9-2"
+        version: "8:6.9.0-0"
         depends: 
           - libc6
           - libbz2-1.0
@@ -21,7 +47,7 @@ jobs:
           - liblqr-1-0
           - libltdl7
           - libpng12-0
-          - libtiff4
+          - libtiff5
           - libx11-6
           - libxext6
           - libxml2
@@ -31,4 +57,4 @@ jobs:
           - libdjvulibre21
         target: install
         repos:
-          - mxm
+          - mxm-public
