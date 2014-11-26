@@ -34,8 +34,8 @@ jobs:
     packages:
       - type: debian
         name: imagemagick
-        version: "8:6.9.0-0"
-        depends: 
+        version: "8:6.9.0-1"
+        depends:
           - libc6
           - libbz2-1.0
           - libfontconfig1
