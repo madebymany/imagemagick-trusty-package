@@ -34,7 +34,7 @@ jobs:
     packages:
       - type: debian
         name: imagemagick
-        version: "8:6.9.0-2"
+        version: "8:6.9.0-3"
         depends:
           - libc6
           - libbz2-1.0
