@@ -7,6 +7,9 @@ jobs:
   imagemagick:
     builder: make
     base: "quay.io/madebymany/build-bases:latest"
+    promote_through:
+      - trusty-unstable
+      - trusty-stable
     build_depends:
       - make
       - curl
@@ -34,7 +37,7 @@ jobs:
     packages:
       - type: debian
         name: imagemagick
-        version: "8:6.9.0-4"
+        version: "8:6.9.0-5"
         depends:
           - libc6
           - libbz2-1.0
