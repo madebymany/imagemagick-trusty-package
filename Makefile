@@ -1,4 +1,4 @@
-VERSION := 6.9.1-3
+VERSION := 6.9.1-6
 TARBALL := ImageMagick.tar.bz2
 EXTRACT_DIR := ImageMagick-$(VERSION)
 EXTRACTED := $(EXTRACT_DIR)/.extracted
@@ -13,7 +13,7 @@ all: build
 
 $(TARBALL):
 	curl -SsLo "$@" \
-	  http://mirror.checkdomain.de/imagemagick/ImageMagick-$(VERSION).tar.bz2
+		https://www.imagemagick.org/download/ImageMagick-$(VERSION).tar.bz2
 
 $(EXTRACTED): $(TARBALL)
 	tar xjf "$(TARBALL)" --no-same-owner
