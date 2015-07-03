@@ -6,7 +6,7 @@ packages:
 jobs:
   imagemagick:
     builder: make
-    base: "quay.io/madebymany/build-bases:latest"
+    base: "quay.io/madebymany/build-bases:trusty"
     promote_through:
       - trusty-unstable
       - trusty-stable
@@ -23,6 +23,7 @@ jobs:
       - libjasper1
       - libjpeg8
       - liblcms1
+      - liblcms2-2
       - liblqr-1-0
       - libltdl7
       - libpng12-0
@@ -37,7 +38,7 @@ jobs:
     packages:
       - type: debian
         name: imagemagick
-        version: "8:6.9.0-8"
+        version: "8:6.9.1-3"
         depends:
           - libc6
           - libbz2-1.0

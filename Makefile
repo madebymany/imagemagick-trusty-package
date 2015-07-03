@@ -1,4 +1,4 @@
-VERSION := 6.9.0-0
+VERSION := 6.9.1-3
 TARBALL := ImageMagick.tar.bz2
 EXTRACT_DIR := ImageMagick-$(VERSION)
 EXTRACTED := $(EXTRACT_DIR)/.extracted
