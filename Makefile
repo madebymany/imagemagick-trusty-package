@@ -1,5 +1,6 @@
 VERSION := 6.9.1-6
 TARBALL := ImageMagick.tar.bz2
+SIGNATURE := $(TARBALL).asc
 EXTRACT_DIR := ImageMagick-$(VERSION)
 EXTRACTED := $(EXTRACT_DIR)/.extracted
 BUILT_DEP := .built-dep
@@ -7,13 +8,22 @@ BUILT := $(EXTRACT_DIR)/.built
 
 PREFIX := /usr
 
-all: build
+all: verify build
 
 .PHONY: all
 
-$(TARBALL):
+$(TARBALL): $(SIGNATURE)
 	curl -SsLo "$@" \
-		https://www.imagemagick.org/download/ImageMagick-$(VERSION).tar.bz2
+		http://www.imagemagick.org/download/ImageMagick-$(VERSION).tar.bz2
+
+$(SIGNATURE):
+	curl -SsLo "$@" \
+		http://www.imagemagick.org/download/ImageMagick-$(VERSION).tar.bz2.asc
+
+verify: $(TARBALL)
+	gpg --keyserver pgp.mit.edu --recv-keys 8277377A
+	gpg --verify $(SIGNATURE) $(TARBALL)
+
 
 $(EXTRACTED): $(TARBALL)
 	tar xjf "$(TARBALL)" --no-same-owner
