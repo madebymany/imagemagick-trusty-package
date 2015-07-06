@@ -1,4 +1,4 @@
-VERSION := 6.9.1-6
+VERSION := 6.9.1-7
 TARBALL := ImageMagick.tar.bz2
 SIGNATURE := $(TARBALL).asc
 EXTRACT_DIR := ImageMagick-$(VERSION)
@@ -8,7 +8,7 @@ BUILT := $(EXTRACT_DIR)/.built
 
 PREFIX := /usr
 
-all: verify build
+all: build
 
 .PHONY: all
 
