@@ -44,6 +44,7 @@ jobs:
           - libbz2-1.0
           - libfontconfig1
           - libfreetype6
+          - liblcms2-2
           - libgomp1
           - libjasper1
           - libjpeg8
