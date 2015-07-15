@@ -57,6 +57,7 @@ jobs:
           - libx11-6
           - libxext6
           - libxml2
+          - libwmf0.2-7
           - zlib1g
           - libpango1.0-0
           - libopenexr6
