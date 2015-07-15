@@ -25,7 +25,7 @@ verify: $(TARBALL)
 	gpg --verify $(SIGNATURE) $(TARBALL)
 
 
-$(EXTRACTED): $(TARBALL)
+$(EXTRACTED):
 	tar xjf "$(TARBALL)" --no-same-owner
 	touch "$@"
 
