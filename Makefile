@@ -5,6 +5,7 @@ EXTRACT_DIR := ImageMagick-$(VERSION)
 EXTRACTED := $(EXTRACT_DIR)/.extracted
 BUILT_DEP := .built-dep
 BUILT := $(EXTRACT_DIR)/.built
+POLICY_FILE := /etc/ImageMagick/policy.xml
 
 PREFIX := /usr
 
@@ -47,6 +48,7 @@ $(BUILT): $(EXTRACTED) $(BUILT_DEP)
 
 install: build
 	cd "$(EXTRACT_DIR)" && make install
+	cp policy.xml "$(POLICY_FILE)"
 
 .PHONY: install
 
