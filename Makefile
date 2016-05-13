@@ -5,7 +5,7 @@ EXTRACT_DIR := ImageMagick-$(VERSION)
 EXTRACTED := $(EXTRACT_DIR)/.extracted
 BUILT_DEP := .built-dep
 BUILT := $(EXTRACT_DIR)/.built
-CONFIG_DIR := /etc/ImageMagick
+CONFIG_DIR := /usr/etc/ImageMagick-6
 POLICY_FILE := $(CONFIG_DIR)/policy.xml
 
 PREFIX := /usr
